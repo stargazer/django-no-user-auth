@@ -1,4 +1,4 @@
-## Non-user authentication in Django and Django Rest Framework (DRF)
+# Non-user authentication in Django and Django Rest Framework (DRF)
 
 Let's imagine that our application needs to be used by some particular users, who
 are not real users on our database backend.
@@ -9,9 +9,6 @@ are not and cannot become system users.
 
 How would you approach authentication and authorization in that case? How would
 this non-system users access the app, and how would the app handle them?
-
-For the sake of discussion, let's imagine the app is built on top of Django and
-DRF.
 
 ## Authentication and authorization
 
@@ -41,7 +38,6 @@ to the `User` instance that the `SessionStore` object pointed to by
 `request.session` refers to.
 
 ### DRF View
-
 #### Request class
 One of the very first thing a DRF view does is [wrap the request
 object](https://github.com/encode/django-rest-framework/blob/c5d9144aef1144825942ddffe0a6af23102ef44a/rest_framework/views.py#L385) around its very own `Request` class. Among others, [this overrides the `request.user` object](https://github.com/encode/django-rest-framework/blob/c5d9144aef1144825942ddffe0a6af23102ef44a/rest_framework/request.py#L220), essentially cancelling out the `AuthenticationMiddleware`'s earlier action, and rendering that middleware useless.

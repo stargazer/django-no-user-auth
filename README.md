@@ -55,7 +55,7 @@ authentication](https://github.com/encode/django-rest-framework/blob/c5d9144aef1
 
 In other words, one authentication class sets the `request.user` object to the `User` instance that made the request. The user instance could, for example, be the one that the Token corresponds to. 
 
-It's worth mentioning that authentication classes are either defined project-wide using the `REST_FRAMEWORD['DEFAULT_AUTHENTICATION_CLASSES']` parameter, or on class level, using the `authentication_classes` parameter.
+It's worth mentioning that authentication classes are either defined project-wide using the `REST_FRAMEWORK['DEFAULT_AUTHENTICATION_CLASSES']` parameter, or on class level, using the `authentication_classes` parameter.
 
 #### Permissions
 The view [checks permissions](https://github.com/encode/django-rest-framework/blob/c5d9144aef1144825942ddffe0a6af23102ef44a/rest_framework/views.py#L415), ensuring that the `request.user` has the necessary access permissions or role to proceed.

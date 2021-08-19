@@ -148,7 +148,7 @@ class HospitalPatientsView(GenericAPIView):
 
 ## Conclusions
 
-As you can see the querying logic is based on the concept of `Hospital` and
+As you can see the view's querying logic is based on the concept of `Hospital` and
 we've accomplished this with quite a few benefits:
 - Without littering the database with dummy users.
 - Without changing our data model to accommodate new types of users (hospital

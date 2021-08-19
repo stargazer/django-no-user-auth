@@ -29,10 +29,7 @@ When reading the session cookie on an incoming request, the middleware sets
 the `request.session` parameter to refer to a `SessionStore` object which wraps
 the session. 
 
-The `SessionMiddleware` runs for all incoming requests. Even anonymous requests get a session that refers to `AnonymousUser`. Even
-requests to an API that uses Token-based authentication, and are therefore
-anonymous from a session perspective, do get a session cookie on their
-response.
+The `SessionMiddleware` runs for all incoming requests. Even anonymous requests get a session that refers to `AnonymousUser`. Even requests to an API that uses Token-based authentication, and are therefore anonymous from a session perspective, do get the `request.session` object as well as the response cookie.
 
 ### Django's AuthenticationMiddleware
 Django's `AuthenticationMiddleware` sets the `request.user` parameter to refer

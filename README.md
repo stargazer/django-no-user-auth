@@ -38,7 +38,7 @@ to the `User` instance that the `SessionStore` object pointed to by
 
 ### DRF View
 #### Request class
-One of the very first thing a DRF view does is [wrap the request
+One of the very first things a DRF view does is [wrap the request
 object](https://github.com/encode/django-rest-framework/blob/c5d9144aef1144825942ddffe0a6af23102ef44a/rest_framework/views.py#L385) around its very own `Request` class. Among others, [this overrides the `request.user` object](https://github.com/encode/django-rest-framework/blob/c5d9144aef1144825942ddffe0a6af23102ef44a/rest_framework/request.py#L220), essentially cancelling out the `AuthenticationMiddleware`'s earlier action, and rendering that middleware useless.
 
 Therefore, as far as API requests go, the `AuthenticationMiddleware` is

@@ -93,7 +93,7 @@ class HospitalAdministrator(AnonymousUser):
         return True
 
 
-class HospitalAuthentication(ModelBackend):
+class HospitalAdministratorAuthentication(ModelBackend):
 
     def authenticate(self, request):
         """
@@ -133,14 +133,14 @@ class HospitalAdministratorPermission(BasePermission):
 # views.py
 # ---------
 from rest_framework.views import GenericAPIView
-from .auth import CustomAuthentication
+from .auth import HospitalAdministratorAuthentication
 from .permissions import HospitalAdministratorPermission
 
 
 class HospitalPatientsView(GenericAPIView):
 
     # Any view can make use of this authentication class
-    authentication_classes = (HospitalAuthentication, )
+    authentication_classes = (HospitalAdministratorAuthentication, )
     permission_classes = (HospitalAdministratorPermission, )
 
     def get_queryset(self):

@@ -109,7 +109,7 @@ class HospitalAdministratorAuthentication(ModelBackend):
         return user, None
 ```
 
-This way, any time the `authenticate` method is called, the incoming request
+This way, any time the `authenticate` method runs successfully, the incoming request
 will get the `request.user` object that contains the `request.user.hospital`
 parameter which indicates the `Hospital` instance that talks to our backend.
 

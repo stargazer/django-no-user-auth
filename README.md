@@ -4,8 +4,10 @@ Let's imagine that our application needs to be used by some particular users, wh
 are not real users on our database backend.
 For example, let's say we have a medical app used by doctors and patients. And
 then we need to provide certain access to Hospital administrators to get an
-overview of their doctors' and patients' activities. And let's assume that hospital administrators
+overview of their doctors' and patients' activities. These hospital administrators
 are not and cannot become system users.
+
+The problem becomes complex since Django's authentication flow revolves around the concept of a user, and plenty of assumptions rely on the user being available.
 
 How would you approach authentication and authorization in that case? How would
 this non-system users access the app, and how would the app handle them?

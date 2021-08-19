@@ -34,7 +34,7 @@ The `SessionMiddleware` runs for all incoming requests. Even anonymous requests 
 ### Django's AuthenticationMiddleware
 Django's `AuthenticationMiddleware` sets the `request.user` parameter to refer
 to the `User` instance that the `SessionStore` object pointed to by
-`request.session` refers to.
+`request.session`, refers to.
 
 ### DRF View
 #### Request class

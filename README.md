@@ -84,7 +84,7 @@ class HospitalAdministrator(AnonymousUser):
     """
 
     def __init__(self, hospital):
-        super().init()
+        super().__init__()
         self.hospital = hospital
 
     @property
